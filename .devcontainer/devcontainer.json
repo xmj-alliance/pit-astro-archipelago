@@ -1,0 +1,29 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+	"name": "Pit Astro Archipelago",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"remoteUser": "node",
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/fish-apt-get:1": {},
+		"ghcr.io/devcontainers-contrib/features/pnpm:2": {}
+	},
+	"customizations": {
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {},
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"astro-build.astro-vscode",
+				"dbaeumer.vscode-eslint"
+			]
+		}
+	},
+	"portsAttributes": {
+		"4321": {
+			"label": "astro-dev-server",
+			"onAutoForward": "notify"
+		}
+	}
+}
