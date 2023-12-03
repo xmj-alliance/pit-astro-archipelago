@@ -1,0 +1,14 @@
+---
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <picture>
+    <img src={frontmatter.image?.url} alt={frontmatter.image?.alt} />
+  </picture>
+  <h4>Published - {frontmatter.pubDate}</h4>
+  <slot />
+  <h4>©️ Brought to you by - {frontmatter.author || "Anonymous"}</h4>
+</Layout>
