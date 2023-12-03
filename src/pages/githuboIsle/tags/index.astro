@@ -1,26 +1,23 @@
 ---
-import Layout from "./Layout.astro";
+import Layout from "../../../layouts/Layout.astro";
 
-const { frontmatter } = Astro.props;
+const allPosts = await Astro.glob("../posts/*.md");
+
+const allTags = allPosts.map((ele) => ele.frontmatter.tags).flat();
+const uniqueTags = [...new Set<any>(allTags)];
 ---
 
-<Layout title={frontmatter.title}>
-  <picture>
-    <img src={frontmatter.image?.url} alt={frontmatter.image?.alt} />
-  </picture>
-  <h4>Published - {frontmatter.pubDate}</h4>
-  <h4>Tags</h4>
+<Layout title="Githubo Isle All Tags">
+  <h2>All tags in Githubo Isle!</h2>
   <ul class="tags">
     {
-      frontmatter.tags?.map((ele: string) => (
+      uniqueTags.map((ele) => (
         <li class="tag">
           <a href={`/githuboIsle/tags/${ele}`}>{ele}</a>
         </li>
       ))
     }
   </ul>
-  <slot />
-  <h4>©️ Brought to you by - {frontmatter.author || "Anonymous"}</h4>
 </Layout>
 
 <style>

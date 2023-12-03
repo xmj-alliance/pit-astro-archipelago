@@ -1,0 +1,40 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+interface Props {
+  posts: any[];
+}
+
+export const getStaticPaths = async () => {
+  const allPosts = await Astro.glob("../posts/*.md");
+  const allTags = allPosts.map((ele: any) => ele.frontmatter.tags).flat();
+  const uniqueTags = [...new Set<any>(allTags)];
+
+  return uniqueTags.map((tag: string) => {
+    const filteredPosts = allPosts.filter((post: any) =>
+      post.frontmatter.tags?.includes(tag),
+    );
+
+    return {
+      params: { tag: tag },
+      props: { posts: filteredPosts },
+    };
+  });
+};
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Layout title={tag}>
+  <p>Posts tagged with {tag}</p>
+  <ul>
+    {
+      posts.map((ele) => (
+        <li>
+          <a href={ele.url}>{ele.frontmatter.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

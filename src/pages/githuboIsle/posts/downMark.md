@@ -1,7 +1,7 @@
 ---
-title: "Githubo Isle Landing Zone"
+title: "Down Mark"
 pubDate: 2023-12-12
-description: "Githubo Isle Landing Zone"
+description: "Githubo Isle Down Mark"
 author: "xmj-alliance"
 image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
@@ -10,10 +10,7 @@ tags: ["astro", "blogging", "learning in public"]
 layout: /src/layouts/MarkdownPostLayout.astro
 ---
 
-# Githubo Isle
-This is the Githubo Isle, famous for its Githubo down marks.
-
-## What is Githubo Down Mark?
+# What is Githubo Down Mark?
 Good question. **Githubo Down Marks** are down marks that mark. Could be:
 - The weather
 - The wind
