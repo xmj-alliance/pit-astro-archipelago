@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Greeting from "../components/Greeting";
 ---
 
 <Layout title="Astro Archipelago">
   <main>
+    <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
     <h1><span class="text-gradient">Astro Archipelago pit</span></h1>
     <p class="instructions">
       To get started, open the directory <code>src/pages</code><br />
