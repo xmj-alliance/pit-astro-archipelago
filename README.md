@@ -1,4 +1,25 @@
-# Astro Starter Kit: Basics
+# Astro Archipelago pit
+
+This is a hello world pit to the Astro framework. It is a demo of every-day features of Astro.
+
+![picture](https://i.imgur.com/4rh3dey.jpg)
+
+## Pages
+- Home: `pages/index.astro`
+
+  Fully styled Home landing page. It has navigation to other pages. A dynamic island component `Greeting.tsx` (made with Preact framework) is also displayed on top.
+
+- Main Isle
+
+  Empty page to test navigation
+
+- Githubo Isle
+
+  Handling Mark-down contents in Astro. It contains an index page, a tag list page and tag detail page for the posts. Some posts are also stored in the `posts` folder.
+
+## Astro CLI Readmes
+
+### init template
 
 ```sh
 npm create astro@latest -- --template basics
@@ -12,7 +33,7 @@ npm create astro@latest -- --template basics
 
 ![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-## 🚀 Project Structure
+### 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
@@ -36,7 +57,7 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+### 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -49,6 +70,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+### 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
